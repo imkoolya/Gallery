@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gallery.ImageListPage">
+    
+    <ContentPage.Content>
+
+        <StackLayout>
+            
+            <ListView x:Name="ImageListView" ItemSelected="OnImageSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Source}" WidthRequest="50" HeightRequest="50" />
+                                <Label Text="{Binding Name}" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Grid ColumnDefinitions="Auto" RowDefinitions="45" Margin="10,15">
+                <Button Text="Открыть" Clicked="OnOpenButtonClicked" CornerRadius="20" Grid.Column="1" />
+                <Button Text="Удалить" Clicked="OnDeleteButtonClicked" CornerRadius="20" Grid.Column="2" />
+            </Grid>
+            
+            
+        </StackLayout>
+
+    </ContentPage.Content>
+    
+</ContentPage>

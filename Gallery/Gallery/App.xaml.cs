@@ -8,19 +8,11 @@ namespace Gallery
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new PinCodePage());
         }
 
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
-        }
+        protected override void OnStart() { }
+        protected override void OnSleep() { }
+        protected override void OnResume() { }
     }
 }
